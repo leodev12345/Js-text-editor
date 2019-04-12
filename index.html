@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Text editor</title>
+			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+			<script src="main.js"></script>
+		</head>
+		<body onload="edit();">
+			<div id="buttons">
+				<button onclick="bold();" class="fas fa-bold"></button>
+				<button onclick="italic();" class="fas fa-italic"></button>
+				<button onclick="underline();" class="fas fa-underline"></button>
+				<button onclick="subscript();" class="fas fa-subscript"></button>
+				<button onclick="superscript();" class="fas fa-superscript"></button>	
+				<button onclick="undo();" class="fas fa-undo"></button>
+				<button onclick="redo();" class="fas fa-redo"></button>
+				<br>
+				<br>
+				<iframe name="editor" style="width:90%; height:400px;"></iframe>
+				<p class="fas fa-laptop-code"> Developer:</p>
+				<br>
+				<a href="https://www.github.com/leodev12345" target="_blank"> LeoDev</a>
+			</div>
+		</body>
+	</html>
