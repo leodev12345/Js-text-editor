@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Text editor</title>
+			<title>Orange edit | by LeoDev</title>
 			<link rel="stylesheet" href="style.css">
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 			<script src="main.js"></script>
 		</head>
 		<body onload="edit();">
 			<div id="buttons">
-				<button onclick="cmd(&quot;bold&quot;);" class="fas fa-bold"></button>	
-				<button onclick="cmd(&quot;italic&quot;);" class="fas fa-italic"></button>
-				<button onclick="cmd(&quot;underline&quot;);" class="fas fa-underline"></button>
-				<button onclick="cmd(&quot;strikeThrough&quot;);" class="fas fa-strikethrough"></button>
-				<button onclick="cmd(&quot;subscript&quot;);" class="fas fa-subscript"></button>
-				<button onclick="cmd(&quot;superscript&quot;);" class="fas fa-superscript"></button>
-				<button onclick="cmd(&quot;insertHorizontalRule&quot;);" class="fas fa-ruler-horizontal"></button>
-				<button onclick="cmd(&quot;justifyCenter&quot;);" class="fas fa-align-center"></button>
-				<button onclick="cmd(&quot;justifyLeft&quot;);" class="fas fa-align-left"></button>
-				<button onclick="cmd(&quot;justifyRight&quot;);" class="fas fa-align-right"></button>
-				<button onclick="cmd(&quot;insertOrderedList&quot;);" class="fas fa-list-ol"></button>
-				<button onclick="cmd(&quot;insertUnorderedList&quot;);" class="fas fa-list-ul"></button>
-				<button onclick="cmd(&quot;copy&quot;);" class="fas fa-copy"></button>
-				<button onclick="cmd(&quot;cut&quot;);" class="fas fa-cut"></button>
-				<button onclick="cmd(&quot;selectAll&quot;);">Select all</button>
-				<button onclick="cmd(&quot;delete&quot;);" class="fas fa-trash-alt"></button>
-				<button onclick="cmd(&quot;indent&quot;);" class="fas fa-indent"></button>
-				<button onclick="cmd(&quot;outdent&quot;);" class="fas fa-outdent"></button>	
-				<button onclick="cmd(&quot;undo&quot;);" class="fas fa-undo"></button>
-				<button onclick="cmd(&quot;redo&quot;);" class="fas fa-redo"></button>	
+				<button title="New document" onclick="newFile();" class="fas fa-file"></button>
+				<button title="Bold" onclick="cmd(&quot;bold&quot;);" class="fas fa-bold"></button>	
+				<button title="Italic" onclick="cmd(&quot;italic&quot;);" class="fas fa-italic"></button>
+				<button title="Underline" onclick="cmd(&quot;underline&quot;);" class="fas fa-underline"></button>
+				<button title="Strike throught" onclick="cmd(&quot;strikeThrough&quot;);" class="fas fa-strikethrough"></button>
+				<button title="Subscript" onclick="cmd(&quot;subscript&quot;);" class="fas fa-subscript"></button>
+				<button title="Superscript" onclick="cmd(&quot;superscript&quot;);" class="fas fa-superscript"></button>
+				<button title="Insert horizontal rule" onclick="cmd(&quot;insertHorizontalRule&quot;);" class="fas fa-window-minimize"></button>
+				<button title="Center" onclick="cmd(&quot;justifyCenter&quot;);" class="fas fa-align-center"></button>
+				<button title="Left" onclick="cmd(&quot;justifyLeft&quot;);" class="fas fa-align-left"></button>
+				<button title="Right" onclick="cmd(&quot;justifyRight&quot;);" class="fas fa-align-right"></button>	
+				<button title="Insert ordered list" onclick="cmd(&quot;insertOrderedList&quot;);" class="fas fa-list-ol"></button>
+				<button title="Insert unordered list" onclick="cmd(&quot;insertUnorderedList&quot;);" class="fas fa-list-ul"></button>
+				<button title="Copy" onclick="cmd(&quot;copy&quot;);" class="fas fa-copy"></button>
+				<button title="Cut" onclick="cmd(&quot;cut&quot;);" class="fas fa-cut"></button>
 				<br>
+				<button title="select all" onclick="cmd(&quot;selectAll&quot;);" class="fas fa-align-justify" ></button>
+				<button title="Delete selected" onclick="cmd(&quot;delete&quot;);" class="fas fa-trash-alt"></button>
+				<button title="Indent" onclick="cmd(&quot;indent&quot;);" class="fas fa-indent"></button>
+				<button title="Outdent" onclick="cmd(&quot;outdent&quot;);" class="fas fa-outdent"></button>
+				<p  class="fas fa-palette"></p>
+				<input type="color" title="Text color" onchange="cmdWithArg(&quot;foreColor&quot;, this.value)">
+				<p class="fas fa-text-height"></p>
+				<input type="number" id="size" title="Font size" onchange="cmdWithArg(&quot;fontSize&quot;, this.value)">	
+				<button title="Undo" onclick="cmd(&quot;undo&quot;);" class="fas fa-undo"></button>
+				<button title="Redo" onclick="cmd(&quot;redo&quot;);" class="fas fa-redo"></button>
+			</div>
 				<br>
 				<iframe name="editor" style="width:90%; height:400px;"></iframe>
 				<p class="fas fa-laptop-code"> Developer:</p>
 				<br>
 				<a href="https://www.github.com/leodev12345" target="_blank"> LeoDev</a>
-			</div>
 		</body>
 	</html>
