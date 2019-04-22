@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>Orange edit | by LeoDev</title>
+			<title>Orange edit | simple WYSIWYG text editor</title>
 			<link rel="stylesheet" href="style.css">
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 			<script src="main.js"></script>
 		</head>
 		<body onload="edit();">
+		<h1>Orange edit</h1>
 			<div id="buttons">
 				<button title="New document" onclick="newFile();" class="fas fa-file"></button>
 				<button title="Bold" onclick="cmd(&quot;bold&quot;);" class="fas fa-bold"></button>	
@@ -18,20 +19,28 @@
 				<button title="Insert horizontal rule" onclick="cmd(&quot;insertHorizontalRule&quot;);" class="fas fa-window-minimize"></button>
 				<button title="Center" onclick="cmd(&quot;justifyCenter&quot;);" class="fas fa-align-center"></button>
 				<button title="Left" onclick="cmd(&quot;justifyLeft&quot;);" class="fas fa-align-left"></button>
-				<button title="Right" onclick="cmd(&quot;justifyRight&quot;);" class="fas fa-align-right"></button>	
+				<button title="Right" onclick="cmd(&quot;justifyRight&quot;);" class="fas fa-align-right"></button>
+				<button title="Justify" onclick="cmd(&quot;justifyFull&quot;);" class="fas fa-align-justify"></button>
 				<button title="Insert ordered list" onclick="cmd(&quot;insertOrderedList&quot;);" class="fas fa-list-ol"></button>
 				<button title="Insert unordered list" onclick="cmd(&quot;insertUnorderedList&quot;);" class="fas fa-list-ul"></button>
+				<button title="Insert paragraph" onclick="cmd(&quot;insertParagraph&quot;);" class="fas fa-paragraph"></button>
 				<button title="Copy" onclick="cmd(&quot;copy&quot;);" class="fas fa-copy"></button>
 				<button title="Cut" onclick="cmd(&quot;cut&quot;);" class="fas fa-cut"></button>
-				<br>
-				<button title="select all" onclick="cmd(&quot;selectAll&quot;);" class="fas fa-align-justify" ></button>
+				<button title="Insert link" onclick="link()" class="fas fa-link"></button>
+				<button title="Unlink" onclick="cmd(&quot;unlink&quot;)" class="fas fa-unlink"></button>
+				<button title="Edit mode on/off"  onclick="editMode()" class="fas fa-edit"></button>
+				<button title="Insert image" onclick="image()" class="fas fa-image"></button>
+				<button title="select all" onclick="cmd(&quot;selectAll&quot;);" >Select all</button>
 				<button title="Delete selected" onclick="cmd(&quot;delete&quot;);" class="fas fa-trash-alt"></button>
 				<button title="Indent" onclick="cmd(&quot;indent&quot;);" class="fas fa-indent"></button>
 				<button title="Outdent" onclick="cmd(&quot;outdent&quot;);" class="fas fa-outdent"></button>
 				<p  class="fas fa-palette"></p>
 				<input type="color" title="Text color" onchange="cmdWithArg(&quot;foreColor&quot;, this.value)">
+				<p class="fas fa-marker"></p>
+				<input type="color" title="Text highlight color" onchange="cmdWithArg(&quot;hiliteColor&quot;, this.value)">
 				<p class="fas fa-text-height"></p>
-				<input type="number" id="size" title="Font size" onchange="cmdWithArg(&quot;fontSize&quot;, this.value)">	
+				<input type="number" id="size" value="20" title="Font size" onchange="cmdWithArg(&quot;fontSize&quot;, this.value)">
+				<br>
 				<button title="Undo" onclick="cmd(&quot;undo&quot;);" class="fas fa-undo"></button>
 				<button title="Redo" onclick="cmd(&quot;redo&quot;);" class="fas fa-redo"></button>
 			</div>
